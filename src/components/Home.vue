@@ -78,7 +78,7 @@ export default {
     const that = this;
     // 如果接收到 URL 参数携带文件信息，则直接渲染：
     if (from && name) {
-      const url = decodeURIComponent(from);
+      const url = from;
       console.log("url ==============>", url);
       fetch(url, {
         mode: "cors",
