@@ -18,7 +18,7 @@
       <div
         v-show="loading"
         class="well loading"
-      >正在加载中，请耐心等待...</div>
+      ><span style="font-size: 14px">正在加载中，请耐心等待...</span></div>
       <div
         v-show="!loading"
         class="well"
@@ -78,6 +78,7 @@ export default {
     const that = this;
     // 如果接收到 URL 参数携带文件信息，则直接渲染：
     if (from && name) {
+      this.hidden = true; // 如果是通过外来二进制打开，隐藏头部
       const url = from;
       console.log("url ==============>", url);
       fetch(url, {
